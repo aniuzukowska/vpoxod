@@ -1,6 +1,13 @@
+import allure
+from allure_commons.types import Severity
 from vpoxod_tests.model import app
 
 
+@allure.tag('critical')
+@allure.severity(Severity.BLOCKER)
+@allure.feature('UI-тесты vpoxod.ru')
+@allure.story('Навигация по сайту')
+@allure.title('Найти все походы на Алтай')
 def test_open_tours_altai(setup_browser):
     browser = setup_browser
     app.open_page(browser, 'https://www.vpoxod.ru/')
@@ -12,6 +19,11 @@ def test_open_tours_altai(setup_browser):
     app.list_tours_page.assert_tours_region(browser, 'Алтай')
 
 
+@allure.tag('critical')
+@allure.severity(Severity.BLOCKER)
+@allure.feature('UI-тесты vpoxod.ru')
+@allure.story('Навигация по сайту')
+@allure.title('Найти все велосипедные походы')
 def test_open_tours_bicycle(setup_browser):
     browser = setup_browser
     app.open_page(browser, 'https://www.vpoxod.ru')
@@ -22,6 +34,11 @@ def test_open_tours_bicycle(setup_browser):
     app.list_tours_page.assert_tours_types(browser, 'Вело')
 
 
+@allure.tag('critical')
+@allure.severity(Severity.BLOCKER)
+@allure.feature('UI-тесты vpoxod.ru')
+@allure.story('Навигация по сайту')
+@allure.title('Найти все летние походы')
 def test_open_tours_summer(setup_browser):
     browser = setup_browser
     app.open_page(browser, 'https://www.vpoxod.ru')
@@ -33,6 +50,11 @@ def test_open_tours_summer(setup_browser):
     app.list_tours_page.assert_tours_seazon(browser, 'Лето')
 
 
+@allure.tag('critical')
+@allure.severity(Severity.BLOCKER)
+@allure.feature('UI-тесты vpoxod.ru')
+@allure.story('Навигация по сайту')
+@allure.title('Найти описание снаряжения (обувь)')
 def test_open_equipment_footwear(setup_browser):
     browser = setup_browser
     app.open_page(browser, 'https://www.vpoxod.ru')
