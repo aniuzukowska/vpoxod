@@ -32,7 +32,7 @@ def setup_browser():
         command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         options=options
     )
-    driver.set_window_size(1280, 1024)
+    driver.set_window_size(1920, 1080)
     browser = Browser(Config(driver))
 
     yield browser
