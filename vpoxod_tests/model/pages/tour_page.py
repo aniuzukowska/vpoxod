@@ -1,3 +1,4 @@
+import os
 import allure
 from selene import query, command
 from selene.support.conditions import have, be
@@ -5,26 +6,28 @@ from selene.support.conditions import have, be
 
 class TourPage():
     def tab_click(self, browser, value):
+        tour_url = os.getenv('TOUR_URL')
         element = None
         if value == 'Маршруты':
-            element = browser.with_(timeout=6).element(".tabs_title a[href='/route/altai/oroktojskim-hrebtom-k-akkemskomu-ozeru-i-podnozu-beluhi/about#tabs']")
+            element = browser.with_(timeout=6).element(f".tabs_title a[href='{tour_url}/about#tabs']")
         elif value == 'Отзывы':
-            element = browser.with_(timeout=6).element(".tabs_title a[href='/route/altai/oroktojskim-hrebtom-k-akkemskomu-ozeru-i-podnozu-beluhi/responses#tabs']")
+            element = browser.with_(timeout=6).element(f".tabs_title a[href='{tour_url}/responses#tabs']")
 
         with allure.step(f'Переходим на вкладку "{value}"'):
             element.perform(command.js.scroll_into_view)
             element.click()
 
     def assert_tab_info(self, browser, value):
+        tour_url = os.getenv('TOUR_URL')
         element = None
         data = None
         if value == 'Маршруты':
             element = browser.with_(timeout=6).element(
-                ".tabs_title a[href='/route/altai/oroktojskim-hrebtom-k-akkemskomu-ozeru-i-podnozu-beluhi/about#tabs']")
+                f".tabs_title a[href='{tour_url}/about#tabs']")
             data = browser.all('.route_description_days *')
         elif value == 'Отзывы':
             element = browser.with_(timeout=6).element(
-                ".tabs_title a[href='/route/altai/oroktojskim-hrebtom-k-akkemskomu-ozeru-i-podnozu-beluhi/responses#tabs']")
+                f".tabs_title a[href='{tour_url}/responses#tabs']")
             data = browser.all('.comments_list article')
 
         with allure.step('Проверяем результат'):

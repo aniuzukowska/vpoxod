@@ -1,3 +1,4 @@
+import os
 import allure
 from allure_commons.types import Severity
 from vpoxod_tests.model import app
@@ -9,8 +10,9 @@ from vpoxod_tests.model import app
 @allure.story('Навигация по сайту')
 @allure.title('Найти все походы на Алтай')
 def test_open_tours_altai(setup_browser):
+    base_url = os.getenv('BASE_URL')
     browser = setup_browser
-    app.open_page(browser, 'https://www.vpoxod.ru/')
+    app.open_page(browser, base_url)
 
     app.main_menu.first_level_click(browser, 'Регионы')
     app.left_menu.item_click(browser, 'Россия')
@@ -25,8 +27,9 @@ def test_open_tours_altai(setup_browser):
 @allure.story('Навигация по сайту')
 @allure.title('Найти все велосипедные походы')
 def test_open_tours_bicycle(setup_browser):
+    base_url = os.getenv('BASE_URL')
     browser = setup_browser
-    app.open_page(browser, 'https://www.vpoxod.ru')
+    app.open_page(browser, base_url)
 
     app.main_menu.first_level_hover(browser, 'Типы')
     app.main_menu.second_level_click(browser, 'Вело')
@@ -40,8 +43,9 @@ def test_open_tours_bicycle(setup_browser):
 @allure.story('Навигация по сайту')
 @allure.title('Найти все летние походы')
 def test_open_tours_summer(setup_browser):
+    base_url = os.getenv('BASE_URL')
     browser = setup_browser
-    app.open_page(browser, 'https://www.vpoxod.ru')
+    app.open_page(browser, base_url)
 
     app.main_menu.first_level_hover(browser, 'Путешествия')
     app.main_menu.second_level_click(browser, 'Календарь дат')
@@ -56,8 +60,9 @@ def test_open_tours_summer(setup_browser):
 @allure.story('Навигация по сайту')
 @allure.title('Найти описание снаряжения (обувь)')
 def test_open_equipment_footwear(setup_browser):
+    base_url = os.getenv('BASE_URL')
     browser = setup_browser
-    app.open_page(browser, 'https://www.vpoxod.ru')
+    app.open_page(browser, base_url)
 
     app.main_menu.first_level_hover(browser, 'Полезно знать')
     app.main_menu.second_level_click(browser, 'Списки снаряжения')
