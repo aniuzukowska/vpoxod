@@ -40,6 +40,12 @@
   - Посмотреть отзывы о походе
   
 ## <a name="Jenkins">Запуск автотестов из Jenkins</a>
-Для удаленного запуска автотестов в <a href="url" target="_blank">Jenkins</a> создана задача (job), настроена и связана с репозиторием в GitHub.
+Для удаленного запуска автотестов в <a href="https://jenkins.autotests.cloud/job/002-annazukowska-python-vpoxod_ui/" target="_blank">Jenkins</a> создана задача (job), настроена и связана с репозиторием в GitHub.
 
+<img width="1234" alt="image" src="https://user-images.githubusercontent.com/109241600/206928850-b4616595-65a5-4bdd-bdf3-f4ae78c4f5f2.png">
+
+## <a name="Telegram">Уведомление о результатах тестирования через Telegram-бот</a>
+После завершения тестов приходит такое оповещение в Telegram с помощью заранее созданного Telegram-бота, привязанного к задаче в Jenkins.
+
+<img width="359" alt="image" src="https://user-images.githubusercontent.com/109241600/206928869-86898176-d7ac-4c52-a01d-d27c73a69645.png">
 
