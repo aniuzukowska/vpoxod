@@ -6,11 +6,7 @@ from ...data.data_tests import Data
 
 
 class ListToursPageLocators():
-    TYPES_TOURS = {
-        'Вело': {
-            'logo': '*[data-original-title*="/types/6-Velo"]'
-        }
-    }
+    TYPES_TOURS = {'Вело': {'logo': '*[data-original-title*="/types/6-Velo"]'}}
     TOUR_START_DATE = '.table_term *[itemprop="startDate"]'
     TITLE = '.main_top > *:first-child'
     GROUP_LOGO_TYPES = '.route_search_tab_icons'
