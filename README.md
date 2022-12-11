@@ -47,7 +47,7 @@
 ## <a name="Telegram">Уведомление о результатах тестирования через Telegram-бот</a>
 После завершения тестов приходит такое оповещение в Telegram с помощью заранее созданного Telegram-бота, привязанного к задаче в Jenkins.
 
-<img width="359" alt="image" src="https://user-images.githubusercontent.com/109241600/206928869-86898176-d7ac-4c52-a01d-d27c73a69645.png">
+<img width="343" alt="image" src="https://user-images.githubusercontent.com/109241600/206930833-321274f8-94e6-4ebf-9782-02310782525d.png">
 
 ## <a name="Allure">Отчеты о прохождении тестов Allure report</a>
 После завершения тестов также формируются отчеты <a href="https://jenkins.autotests.cloud/job/002-annazukowska-python-vpoxod_ui/6/allure/#behaviors/10c615c00b45c542038c6c30e1341f76" target="_blank">Allure report</a>, которые можно посмотреть со страницы задачи в Jenkins.
