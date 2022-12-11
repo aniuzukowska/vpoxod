@@ -20,7 +20,7 @@ class MainMenu():
         main_menu_locators = MainMenuLocators()
         locator_first_level_element = main_menu_locators.FIRST_LEVEL_LOCATORS[value]
 
-        with allure.step(f'В хедере нажимаем на кнопку "{value}" '):
+        with allure.step(f'В хедере нажимаем на кнопку "{value}"'):
             browser.all(locator_first_level_element).first.click()
 
     def first_level_hover(self, browser, value):
