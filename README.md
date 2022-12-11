@@ -49,3 +49,17 @@
 
 <img width="359" alt="image" src="https://user-images.githubusercontent.com/109241600/206928869-86898176-d7ac-4c52-a01d-d27c73a69645.png">
 
+## <a name="Allure">Отчеты о прохождении тестов Allure report</a>
+После завершения тестов также формируются отчеты <a href="https://jenkins.autotests.cloud/job/002-annazukowska-python-vpoxod_ui/6/allure/#behaviors/10c615c00b45c542038c6c30e1341f76" target="_blank">Allure report</a>, которые можно посмотреть со страницы задачи в Jenkins.
+
+<img width="1430" alt="image" src="https://user-images.githubusercontent.com/109241600/206929379-0138c81e-a73d-4e0a-bc9b-17cfc02a0a54.png">
+<img width="1432" alt="image" src="https://user-images.githubusercontent.com/109241600/206929433-59c19efa-d3c7-4fb7-914b-264740776a40.png">
+
+К отчетам прикреплены логи, скриншот и видеозапись прохождения тестов
+<img width="780" alt="image" src="https://user-images.githubusercontent.com/109241600/206929302-1d0dd425-43ae-4462-b0c5-ad93eadc9145.png">
+
+## <a name="TestOPS">Интеграция с Allure TestOPS</a>
+Настроена интеграция Jenkins с Allure TestOPS.
+При первом после интеграции прохождении тестов в Jenkins, в Allure TestOPS были автоматически созданы такие тест-кейсы:
+
+
