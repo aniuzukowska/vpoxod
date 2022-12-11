@@ -20,6 +20,7 @@ class ListToursPageLocators():
         'part 1': '.item_header',
         'part 2': '.first.item_1'
     }
+    BUTTON_ORDER = '.order-button.btn-orange'
 
 
 class ListToursPage():
@@ -79,6 +80,7 @@ class ListToursPage():
         locator_tour_start_date = list_tours_page_locators.TOUR_START_DATE
         locator_content_part_1 = list_tours_page_locators.TOUR_CONTENT_FOR_SEAZON['part 1']
         locator_content_part_2 = list_tours_page_locators.TOUR_CONTENT_FOR_SEAZON['part 2']
+        locator_button_order = list_tours_page_locators.BUTTON_ORDER
 
         data = Data()
         seazon_months = data.SEAZON_MONTHS[value]
@@ -93,6 +95,7 @@ class ListToursPage():
                 browser.all(locator_content_part_2).with_(timeout=6).should(have.size_greater_than(1))
 
             with allure.step(f'Проверяем, что отображаемые походы начинаются в сезоне {value}'):
+                browser.with_(timeout=10).all(locator_button_order).first.should(be.clickable)
                 tour_start_date_list = browser.all(locator_tour_start_date)
                 for date in tour_start_date_list:
                     date_str = date.get(query.attribute('content'))
