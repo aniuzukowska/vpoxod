@@ -34,7 +34,7 @@ class MainMenu():
         main_menu_locators = MainMenuLocators()
         locator_second_level_element = main_menu_locators.SECOND_LEVEL_LOCATORS[value]
 
-        with allure.step(f'В открывшемся меню выбираем раздел "{value}"'):
+        with allure.step(f'В открывшемся меню выбираем раздел "{value}" '):
             browser.with_(timeout=8).element(locator_second_level_element).click()
 
 
