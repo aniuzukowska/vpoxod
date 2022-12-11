@@ -4,7 +4,7 @@ from vpoxod_tests.model import app
 
 
 @allure.tag('critical')
-@allure.severity(Severity.BLOCKER)
+@allure.severity(Severity.CRITICAL)
 @allure.feature('UI-тесты vpoxod.ru')
 @allure.story('Навигация по сайту')
 @allure.title('Найти все походы на Алтай')
@@ -20,7 +20,7 @@ def test_open_tours_altai(setup_browser):
 
 
 @allure.tag('critical')
-@allure.severity(Severity.BLOCKER)
+@allure.severity(Severity.CRITICAL)
 @allure.feature('UI-тесты vpoxod.ru')
 @allure.story('Навигация по сайту')
 @allure.title('Найти все велосипедные походы')
@@ -35,7 +35,7 @@ def test_open_tours_bicycle(setup_browser):
 
 
 @allure.tag('critical')
-@allure.severity(Severity.BLOCKER)
+@allure.severity(Severity.CRITICAL)
 @allure.feature('UI-тесты vpoxod.ru')
 @allure.story('Навигация по сайту')
 @allure.title('Найти все летние походы')
@@ -51,7 +51,7 @@ def test_open_tours_summer(setup_browser):
 
 
 @allure.tag('critical')
-@allure.severity(Severity.BLOCKER)
+@allure.severity(Severity.CRITICAL)
 @allure.feature('UI-тесты vpoxod.ru')
 @allure.story('Навигация по сайту')
 @allure.title('Найти описание снаряжения (обувь)')

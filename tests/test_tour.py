@@ -4,7 +4,7 @@ from vpoxod_tests.model import app
 
 
 @allure.tag('critical')
-@allure.severity(Severity.BLOCKER)
+@allure.severity(Severity.CRITICAL)
 @allure.feature('UI-тесты vpoxod.ru')
 @allure.story('Действия на странице похода')
 @allure.title('Посмотреть информацию о маршруте')
@@ -16,7 +16,7 @@ def test_tour_open_tab_route(setup_browser):
 
 
 @allure.tag('critical')
-@allure.severity(Severity.BLOCKER)
+@allure.severity(Severity.CRITICAL)
 @allure.feature('UI-тесты vpoxod.ru')
 @allure.story('Действия на странице похода')
 @allure.title('Посмотреть информацию о сроках и стоимости')
@@ -28,7 +28,7 @@ def test_tour_open_date_and_price(setup_browser):
 
 
 @allure.tag('critical')
-@allure.severity(Severity.BLOCKER)
+@allure.severity(Severity.CRITICAL)
 @allure.feature('UI-тесты vpoxod.ru')
 @allure.story('Действия на странице похода')
 @allure.title('Посмотреть отзывы о походе')
