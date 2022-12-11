@@ -68,6 +68,9 @@
 <img width="1436" alt="image" src="https://user-images.githubusercontent.com/109241600/206930141-02c17beb-a7f1-4ef5-8c23-2ed48873b7a9.png">
 <img width="1434" alt="image" src="https://user-images.githubusercontent.com/109241600/206930178-fb4c6d4c-284e-4490-90af-28b791cdf2af.png">
 
+## <a name="Jira">Интеграция с Jira</a>
+Настроена интеграция Allure TestOPS с Jira. К задаче в Jira привязаны тест-кейсы и прогон с результатами тестирования из Allure TestOPS.
 
+<img width="1431" alt="image" src="https://user-images.githubusercontent.com/109241600/206930484-8d2ffc39-f863-492e-966f-b6ee5f0f23a2.png">
+<img width="1432" alt="image" src="https://user-images.githubusercontent.com/109241600/206930506-968cb7ea-9095-41cd-b1c9-a757f1c7eaa2.png">
 
-## <a name="Telegram">Уведомление о результатах тестирования через Telegram-бот</a>
