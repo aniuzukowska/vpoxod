@@ -62,4 +62,12 @@
 Настроена интеграция Jenkins с Allure TestOPS.
 При первом после интеграции прохождении тестов в Jenkins, в Allure TestOPS были автоматически созданы такие тест-кейсы:
 
+<img width="1434" alt="image" src="https://user-images.githubusercontent.com/109241600/206929969-59fa14d9-14ed-480c-842b-57c7a0e1e63d.png">
 
+Можно посмотреть историю выполненных прогонов:
+<img width="1436" alt="image" src="https://user-images.githubusercontent.com/109241600/206930141-02c17beb-a7f1-4ef5-8c23-2ed48873b7a9.png">
+<img width="1434" alt="image" src="https://user-images.githubusercontent.com/109241600/206930178-fb4c6d4c-284e-4490-90af-28b791cdf2af.png">
+
+
+
+## <a name="Telegram">Уведомление о результатах тестирования через Telegram-бот</a>
