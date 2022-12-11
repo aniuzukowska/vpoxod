@@ -4,53 +4,64 @@ from selene import query, command
 from selene.support.conditions import have, be
 
 
+class TourPageLocators():
+    TITLE = '.route_table .route_title'
+    BUTTON = {'Сроки походов': '.route_button'}
+    TAB = {
+        'Маршруты': {'part 1': '.tabs_title a[href="', 'part 2': '/about#tabs"]'},
+        'Отзывы': {'part 1': '.tabs_title a[href="', 'part 2': '/responses#tabs"]'}
+    }
+    CONTENT = {
+        'Маршруты': '.route_description_days *',
+        'Отзывы': '.comments_list article'
+    }
+    DATE = '.first.item_1'
+    PRICE = '.tippy.table_price_left'
+
+
 class TourPage():
     def tab_click(self, browser, value):
         tour_url = os.getenv('TOUR_URL')
-        element = None
-        if value == 'Маршруты':
-            element = browser.with_(timeout=6).element(f".tabs_title a[href='{tour_url}/about#tabs']")
-        elif value == 'Отзывы':
-            element = browser.with_(timeout=6).element(f".tabs_title a[href='{tour_url}/responses#tabs']")
+        tour_page_locators = TourPageLocators()
+        locator_tab = tour_page_locators.TAB[value]['part 1'] + tour_url \
+                      + tour_page_locators.TAB[value]['part 2']
 
         with allure.step(f'Переходим на вкладку "{value}"'):
-            element.perform(command.js.scroll_into_view)
-            element.click()
+            browser.element(locator_tab).perform(command.js.scroll_into_view)
+            browser.element(locator_tab).click()
 
     def assert_tab_info(self, browser, value):
         tour_url = os.getenv('TOUR_URL')
-        element = None
-        data = None
-        if value == 'Маршруты':
-            element = browser.with_(timeout=6).element(
-                f".tabs_title a[href='{tour_url}/about#tabs']")
-            data = browser.all('.route_description_days *')
-        elif value == 'Отзывы':
-            element = browser.with_(timeout=6).element(
-                f".tabs_title a[href='{tour_url}/responses#tabs']")
-            data = browser.all('.comments_list article')
+        tour_page_locators = TourPageLocators()
+        locator_tab = tour_page_locators.TAB[value]['part 1'] + tour_url \
+                      + tour_page_locators.TAB[value]['part 2']
+        locator_content = tour_page_locators.CONTENT[value]
 
         with allure.step('Проверяем результат'):
             with allure.step(f'Проверяем, что открыта вкладка "{value}"'):
-                class_tab = element.get(query.attribute('class'))
+                class_tab = browser.element(locator_tab).get(query.attribute('class'))
                 assert 'active' in class_tab
             with allure.step(f'Проверяем, что отображается содержимое вкладки {value}'):
-                data.should(have.size_greater_than(0))
+                browser.all(locator_content).should(have.size_greater_than(0))
 
     def button_click(self, browser, value):
-        element = None
-        if value == 'Сроки походов':
-            element = browser.element('.route_button')
+        tour_page_locators = TourPageLocators()
+        locator_button = tour_page_locators.BUTTON[value]
 
         with allure.step(f'Нажимаем кнопку "{value}"'):
-            element.click()
+            browser.element(locator_button).click()
 
     def assert_date_and_price(self, browser):
+        tour_page_locators = TourPageLocators()
+        locator_title = tour_page_locators.TITLE
+        locator_date = tour_page_locators.DATE
+        locator_price = tour_page_locators.PRICE
+
         with allure.step('Проверяем результат'):
             with allure.step('Проверяем заголовок'):
-                browser.element('.route_table .route_title').should(have.text('БЛИЖАЙШИЕ ПОХОДЫ'))
-                browser.element('.route_table .route_title').should(be.visible)
+                browser.element(locator_title).should(have.text('БЛИЖАЙШИЕ ПОХОДЫ'))
+                browser.element(locator_title).should(be.visible)
             with allure.step('Проверяем, что отображаются данные со сроками и стоимостью походов'):
-                browser.all('.first.item_1').should(have.size_greater_than(1))
-                browser.all('.tippy.table_price_left').should(have.size_greater_than(0))
+                browser.all(locator_date).should(have.size_greater_than(1))
+                browser.all(locator_price).should(have.size_greater_than(0))
 
