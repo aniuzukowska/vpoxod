@@ -33,7 +33,8 @@ def setup_browser():
         options=options
     )
     driver.set_window_size(1920, 1080)
-    browser = Browser(Config(driver))
+    base_url = os.getenv('BASE_URL')
+    browser = Browser(Config(driver, base_url=base_url))
 
     yield browser
 
