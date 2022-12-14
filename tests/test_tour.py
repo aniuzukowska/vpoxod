@@ -10,10 +10,8 @@ from vpoxod_tests.model import app
 @allure.title('Посмотреть информацию о маршруте')
 def test_tour_open_tab_route(setup_browser):
     browser = setup_browser
-
     app.tour_page.open(browser)
     app.tour_page.tab_click(browser, 'Маршруты')
-
     app.tour_page.assert_tab_info(browser, 'Маршруты')
 
 
@@ -24,10 +22,8 @@ def test_tour_open_tab_route(setup_browser):
 @allure.title('Посмотреть информацию о сроках и стоимости')
 def test_tour_open_date_and_price(setup_browser):
     browser = setup_browser
-
     app.tour_page.open(browser)
     app.tour_page.button_click(browser, 'Сроки походов')
-
     app.tour_page.assert_date_and_price(browser)
 
 
@@ -38,10 +34,8 @@ def test_tour_open_date_and_price(setup_browser):
 @allure.title('Посмотреть отзывы о походе')
 def test_tour_open_feedback(setup_browser):
     browser = setup_browser
-
     app.tour_page.open(browser)
     app.tour_page.tab_click(browser, 'Отзывы')
-
     app.tour_page.assert_tab_info(browser, 'Отзывы')
 
 
