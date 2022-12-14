@@ -18,6 +18,11 @@ class TourPage():
     date = '.first.item_1'
     price = '.tippy.table_price_left'
 
+    def open(self, browser):
+        with allure.step(f'Открываем страницу тура'):
+            tour_url = os.getenv('TOUR_URL')
+            browser.open(f'{tour_url}#content-top')
+
     def tab_click(self, browser, value):
         tour_url = os.getenv('TOUR_URL')
         locator_tab = self.tab[value]['part 1'] + tour_url + self.tab[value]['part 2']
