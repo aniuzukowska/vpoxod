@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import Browser, Config
 from dotenv import load_dotenv
-from utils import attach
+from vpoxod_tests.utils import attach
 
 
 @pytest.fixture(scope='session', autouse=True)
