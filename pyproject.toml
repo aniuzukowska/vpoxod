@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "vpoxod"
+version = "0.1.0"
+description = ""
+authors = ["anna-zukowska <anna-zukowska@ya.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^7.2.0"
+allure-pytest = "^2.12.0"
+python-dotenv = "^0.21.0"
+selene = "2.0.0b14"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
