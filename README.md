@@ -81,7 +81,7 @@
 
 <a name="TestOPS">
 
-#Интеграция с Allure TestOPS
+## Интеграция с Allure TestOPS
 Настроена интеграция Jenkins с Allure TestOPS.
 При первом после интеграции прохождении тестов в Jenkins, в Allure TestOPS были автоматически созданы такие тест-кейсы:
 
@@ -95,7 +95,7 @@
 
 <a name="Jira">
 
-##Интеграция с Jira
+## Интеграция с Jira
 Настроена интеграция Allure TestOPS с Jira. К задаче в Jira привязаны тест-кейсы и прогон с результатами тестирования из Allure TestOPS.
 
 <img width="1431" alt="image" src="https://user-images.githubusercontent.com/109241600/206930484-8d2ffc39-f863-492e-966f-b6ee5f0f23a2.png">
