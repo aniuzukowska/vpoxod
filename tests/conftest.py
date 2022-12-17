@@ -7,17 +7,31 @@ from dotenv import load_dotenv
 from vpoxod_tests.utils import attach
 
 
+def pytest_addoption(parser: pytest.Parser):
+    parser.addoption(
+        '--browser_version',
+        default='100.0'
+    )
+    parser.addoption(
+        '--window_size',
+        default=[1920, 1080]
+    )
+
+
 @pytest.fixture(scope='session', autouse=True)
 def load_env():
     load_dotenv()
 
 
 @pytest.fixture(scope='function')
-def setup_browser():
+def setup_browser(request):
+    browser_version = request.config.getoption('--browser_version')
+    window_size = request.config.getoption('--window_size')
+
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
-        "browserVersion": "100.0",
+        "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": True
@@ -32,7 +46,7 @@ def setup_browser():
         command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         options=options
     )
-    driver.set_window_size(1920, 1080)
+    driver.set_window_size(*window_size)
     base_url = os.getenv('BASE_URL')
     browser = Browser(Config(driver, base_url=base_url))
 
