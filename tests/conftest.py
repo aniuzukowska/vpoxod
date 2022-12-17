@@ -14,7 +14,7 @@ def pytest_addoption(parser: pytest.Parser):
     )
     parser.addoption(
         '--window_size',
-        default=[1920, 1080]
+        default='1920x1080'
     )
 
 
@@ -46,7 +46,7 @@ def setup_browser(request):
         command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         options=options
     )
-    driver.set_window_size(*window_size)
+    driver.set_window_size(window_size[:4], window_size[5:])
     base_url = os.getenv('BASE_URL')
     browser = Browser(Config(driver, base_url=base_url))
 
