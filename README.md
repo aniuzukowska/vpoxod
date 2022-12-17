@@ -4,7 +4,7 @@
 <a href="https://www.vpoxod.ru" target="_blank">«Клуб Приключений»</a> — это сайт, на котором можно выбрать для себя интересный активный тур (поход) по России и другим странам.
 
 ## Содержание
-+ [Технологии и инструменты](#Технологии)
++ [Технологии и инструменты](#Технологии) 
 + [Тест-кейсы](#Тесты)
 + [Запуск автотестов из Jenkins](#Jenkins) 
 + [Оповещение о результатах через Telegram-бот](#Telegram) 
@@ -12,23 +12,30 @@
 + [Интеграция с Allure TestOPS](#TestOPS) 
 + [Интеграция с Jira](#Jira) 
 
-## <a name="Технологии">Технологии и инструменты, использованные в проекте</a>
+
+<a name="Технологии">
+
+## Технологии и инструменты, использованные в проекте
 <p align="center">
-<img width="6%" title="PyCharm" src="images/logo/pycharm.svg">
-<img width="6%" title="Python" src="images/logo/python.svg">
-<img width="6%" title="Pytest" src="images/logo/pytest.svg">
-<img width="6%" title="Selenium" src="images/logo/selenium.png">
-<img width="6%" title="Selene" src="images/logo/selene.png">
-<img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
-<img width="6%" title="GitHub" src="images/logo/GitHub.svg">
-<img width="6%" title="Jenkins" src="images/logo/Jenkins.svg">  
-<img width="6%" title="AllureReport" src="images/logo/Allure_Report.svg">  
-<img width="6%" title="AllureTestOPS" src="images/logo/Allure_TO.svg"> 
-<img width="6%" title="Telegram" src="images/logo/Telegram.svg">  
-<img width="6%" title="Jira" src="images/logo/jira.svg"> 
+<img width="6%" title="PyCharm" src="vpoxod_tests/utils/images/pycharm.svg">
+<img width="6%" title="Python" src="vpoxod_tests/utils/images/python.svg">
+<img width="6%" title="Pytest" src="vpoxod_tests/utils/images/pytest.svg">
+<img width="6%" title="Selenium" src="vpoxod_tests/utils/images/selenium.png">
+<img width="6%" title="Selene" src="vpoxod_tests/utils/images/selene.png">
+<img width="6%" title="Selenoid" src="vpoxod_tests/utils/images/Selenoid.svg">
+<img width="6%" title="GitHub" src="vpoxod_tests/utils/images/GitHub.svg">
+<img width="6%" title="Jenkins" src="vpoxod_tests/utils/images/Jenkins.svg">  
+<img width="6%" title="AllureReport" src="vpoxod_tests/utils/images/Allure_Report.svg">  
+<img width="6%" title="AllureTestOPS" src="vpoxod_tests/utils/images/Allure_TO.svg"> 
+<img width="6%" title="Telegram" src="vpoxod_tests/utils/images/Telegram.svg">  
+<img width="6%" title="Jira" src="vpoxod_tests/utils/images/jira.svg"> 
 </p>
 
-## <a name="Тесты">Тест-кейсы</a>
+
+
+<a name="Тесты">
+
+## Тест-кейсы
 ###### Навигация по сайту:
   - Найти все походы на Алтай
   - Найти все велосипедные походы
@@ -39,17 +46,35 @@
   - Посмотреть информацию о сроках и стоимости
   - Посмотреть отзывы о походе
   
-## <a name="Jenkins">Запуск автотестов из Jenkins</a>
+
+
+<a name="Jenkins">
+
+## Запуск автотестов из Jenkins
 Для удаленного запуска автотестов в <a href="https://jenkins.autotests.cloud/job/002-annazukowska-python-vpoxod_ui/" target="_blank">Jenkins</a> создана задача (job), настроена и связана с репозиторием в GitHub.
 
 <img width="1234" alt="image" src="https://user-images.githubusercontent.com/109241600/206928850-b4616595-65a5-4bdd-bdf3-f4ae78c4f5f2.png">
 
-## <a name="Telegram">Уведомление о результатах тестирования через Telegram-бот</a>
+Далее я доработала сборку, сделав ее параметризированной. Можно выбрать какие именно тесты будут запущены: 
+- все тесты
+- только тесты из раздела 'Навигация по сайту'
+- только тесты из раздела 'Действия на странице похода'
+<img width="1067" alt="image" src="https://user-images.githubusercontent.com/109241600/208168530-0ff80171-9396-4b24-80d7-93d280a91577.png">
+
+
+
+<a name="Telegram">
+
+## Уведомление о результатах тестирования через Telegram-бот
 После завершения тестов приходит такое оповещение в Telegram с помощью заранее созданного Telegram-бота, привязанного к задаче в Jenkins.
 
 <img width="343" alt="image" src="https://user-images.githubusercontent.com/109241600/206930833-321274f8-94e6-4ebf-9782-02310782525d.png">
 
-## <a name="Allure">Отчеты о прохождении тестов Allure report</a>
+
+
+<a name="Allure">
+
+## Отчеты о прохождении тестов Allure report
 После завершения тестов также формируются отчеты <a href="https://jenkins.autotests.cloud/job/002-annazukowska-python-vpoxod_ui/6/allure/#behaviors/10c615c00b45c542038c6c30e1341f76" target="_blank">Allure report</a>, которые можно посмотреть со страницы задачи в Jenkins.
 
 <img width="1430" alt="image" src="https://user-images.githubusercontent.com/109241600/206929379-0138c81e-a73d-4e0a-bc9b-17cfc02a0a54.png">
@@ -58,7 +83,11 @@
 К отчетам прикреплены логи, скриншот и видеозапись прохождения тестов
 <img width="780" alt="image" src="https://user-images.githubusercontent.com/109241600/206929302-1d0dd425-43ae-4462-b0c5-ad93eadc9145.png">
 
-## <a name="TestOPS">Интеграция с Allure TestOPS</a>
+
+
+<a name="TestOPS">
+
+## Интеграция с Allure TestOPS
 Настроена интеграция Jenkins с Allure TestOPS.
 При первом после интеграции прохождении тестов в Jenkins, в Allure TestOPS были автоматически созданы такие тест-кейсы:
 
@@ -68,7 +97,11 @@
 <img width="1436" alt="image" src="https://user-images.githubusercontent.com/109241600/206930141-02c17beb-a7f1-4ef5-8c23-2ed48873b7a9.png">
 <img width="1434" alt="image" src="https://user-images.githubusercontent.com/109241600/206930178-fb4c6d4c-284e-4490-90af-28b791cdf2af.png">
 
-## <a name="Jira">Интеграция с Jira</a>
+
+
+<a name="Jira">
+
+## Интеграция с Jira
 Настроена интеграция Allure TestOPS с Jira. К задаче в Jira привязаны тест-кейсы и прогон с результатами тестирования из Allure TestOPS.
 
 <img width="1431" alt="image" src="https://user-images.githubusercontent.com/109241600/206930484-8d2ffc39-f863-492e-966f-b6ee5f0f23a2.png">
